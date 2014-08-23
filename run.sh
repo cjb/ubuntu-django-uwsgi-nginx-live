@@ -17,9 +17,13 @@ else
 	then
 		pip install -r /opt/django/app/requirements.txt
 	fi
+	cd /opt/django/app
+	./manage.py syncdb
+	./manage.py migrate
 fi
 
 if [ -f "/opt/django/app/docker_run.sh" ]
+then
 	# You can put image custom setup scripts here.
 	source /opt/django/app/docker_run.sh
 fi
