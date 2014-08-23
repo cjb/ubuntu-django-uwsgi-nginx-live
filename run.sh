@@ -8,6 +8,20 @@ if [ ! -f "/opt/django/app/manage.py" ]
 then
 	echo "creating basic django project (module: ${MODULE})"
 	django-admin.py startproject ${MODULE} /opt/django/app/
+else
+	echo "Using existing django project"
+	if [ -f "/opt/django/app/requirements/dev.txt" ]
+	then
+		pip install -r /opt/django/app/requirements/dev.txt
+	elif [ -f "/opt/django/app/requirements.txt" ]
+	then
+		pip install -r /opt/django/app/requirements.txt
+	fi
+fi
+
+if [ -f "/opt/django/app/docker_run.sh" ]
+	# You can put image custom setup scripts here.
+	source /opt/django/app/docker_run.sh
 fi
 
 /usr/bin/supervisord
