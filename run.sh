@@ -18,7 +18,7 @@ else
 		pip install -r /opt/django/app/requirements.txt
 	fi
 	cd /opt/django/app
-	./manage.py syncdb
+	./manage.py syncdb --noinput
 	./manage.py migrate
 fi
 
