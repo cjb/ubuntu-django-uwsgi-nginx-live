@@ -1,0 +1,52 @@
+/* fonts */
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+
+/* Carousel styling */
+.bx-wrapper {
+  width: 100%;
+  margin-left: 0; }
+
+.bx-wrapper img {
+  width: 100%;
+  height: auto; }
+
+/* body image styles - classes supplied by rich text editor */
+.body-content {
+  width: 100%;
+  overflow: hidden;
+  clear: both; }
+  .body-content img {
+    margin-bottom: 2%;
+    margin-top: 2%; }
+  .body-content img.full-width {
+    width: 100%; }
+  .body-content img.left {
+    width: 45%;
+    margin-right: 5%;
+    float: left; }
+  .body-content img.right {
+    width: 45%;
+    margin-left: 5%;
+    float: right; }
+  .body-content h2, .body-content h3, .body-content h4, .body-content h5 {
+    clear: both; }
+
+/* List styling - tweaks to include images */
+a.list-group-item {
+  clear: both;
+  width: 100%;
+  overflow: hidden; }
+  a.list-group-item .list-group-item-text {
+    margin-top: 1%; }
+    a.list-group-item .list-group-item-text img {
+      float: left;
+      margin-right: 2%;
+      margin-bottom: 1%; }
+
+/* Style pager */
+.col-sm-4.pages {
+  text-align: center; }
+
+.col-sm-4.next {
+  text-align: right; }
