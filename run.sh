@@ -1,6 +1,8 @@
 #!/bin/bash
 
 MODULE=${MODULE:-website}
+DBUSER=${DBUSER:-docker}
+DBPASS=${DBPASS:-docker}
 
 sed -i "s#module=website.wsgi:application#module=${MODULE}.wsgi:application#g" /opt/django/uwsgi.ini
 
@@ -17,6 +19,7 @@ else
 	then
 		pip install -r /opt/django/app/requirements.txt
 	fi
+	echo $DBPASS | createdb --user $DBUSER --host $DB1_PORT_5432_TCP_ADDR --port $DB1_PORT_5432_TCP_PORT ${MODULE}
 	cd /opt/django/app
 	./manage.py syncdb --noinput
 	./manage.py migrate
